@@ -1,6 +1,11 @@
 import React from 'react';
 import { Wrapper } from './UserCartComponent.styled';
+import { ItemComponent } from 'components/ItemComponent/ItemComponent';
 
 export const UserCartComponent = () => {
-  return <Wrapper>UserCartComponent</Wrapper>;
+  return (
+    <Wrapper>
+      <ItemComponent />
+    </Wrapper>
+  );
 };
