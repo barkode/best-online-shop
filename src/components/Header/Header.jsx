@@ -28,10 +28,6 @@ export const Header = () => {
     setIsModalOpen(true);
   };
 
-  const openUserCart = () => {
-    console.log('HELLO');
-  };
-
   return (
     <Wrapper>
       <Container>
@@ -89,11 +85,7 @@ export const Header = () => {
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
               <Link to={'cart'}>
-                <HeaderIconMenuButton
-                  type="button"
-                  aria-label="Shopping cart"
-                  onClick={openUserCart}
-                >
+                <HeaderIconMenuButton type="button" aria-label="Shopping cart">
                   <Icon id={'shopping-cart'} width={'24px'} height={'24px'} />
                 </HeaderIconMenuButton>
               </Link>
