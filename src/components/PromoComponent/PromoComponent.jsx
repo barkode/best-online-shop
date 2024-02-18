@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from './PromoComponent.styled';
 import { ButtonComponent } from 'components/ButtonComponent/ButtonComponent';
 
-export const PromoComponent = () => {
+export const PromoComponent = props => {
   return (
     <Container>
       <h2>У вас є промокод на знижку?</h2>
