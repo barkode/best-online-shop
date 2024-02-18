@@ -9,14 +9,12 @@ import {
   NotFoundPage,
   MainPage,
   InformationPage,
-  // FavoritePage,
-  // UserPage,
-  // CartPage,
+  CustomerPage,
+  CartPage,
 } from 'pages';
 import { useEffect } from 'react';
 import GlobalStyles from 'GlobalStyle';
 import { Auth } from 'components/Auth/Auth';
-import { CustomerPage } from 'pages/CustomerPage/CustomerPage';
 
 function App() {
   const location = useLocation();
@@ -42,6 +40,7 @@ function App() {
           <Route path="deals/:productsId" element={<ProductDetailsPage />} />
           <Route path="information" element={<InformationPage />} />
           <Route path="auth" element={<Auth />} />
+          <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
