@@ -16,4 +16,14 @@ export const BtnContainer = styled.button`
   border: ${props => props.$style.border || 'none'};
   border-radius: ${props => props.$style.borderRadius || '4px'};
   padding: ${props => props.$style.padding || '8px'};
+  margin: ${props => props.$style.margin || '0'};
+  transform: ${props => props.$style.padding || '8px'};
+  transition: ${props =>
+    props.$style.transition ||
+    'color 250ms cubic-bezier(0.4, 0, 0.2, 1),background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)'};
+
+  &:hover {
+    color: black;
+    background-color: #fff;
+  }
 `;
