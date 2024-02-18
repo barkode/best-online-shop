@@ -7,20 +7,23 @@ import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'styled-components';
 import DefaultTheme from './GlobalTheme';
 import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import { persistor, store } from './redux/store';
 import { ModalProvider } from 'styled-react-modal';
 import { FadingBackground } from 'components/Modal/PopUp.styled';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <ThemeProvider theme={DefaultTheme}>
-          <ModalProvider backgroundComponent={FadingBackground}>
-            <App />
-          </ModalProvider>
-        </ThemeProvider>
+        <PersistGate loading={null} persistor={persistor}>
+          <ThemeProvider theme={DefaultTheme}>
+            <ModalProvider backgroundComponent={FadingBackground}>
+              <App />
+            </ModalProvider>
+          </ThemeProvider>
+        </PersistGate>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>

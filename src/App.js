@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 
+
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 import {
   DealsPage,
