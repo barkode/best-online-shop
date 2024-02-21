@@ -42,7 +42,7 @@ export const Text = styled.p`
     font-size: 32px;
   }
 `;
-export const LinkTo = styled(Link)`
+export const LinkTo = styled.button`
   padding: 20px 0;
   width: 100%;
   background: ${props => props.theme.main.colorBlack};

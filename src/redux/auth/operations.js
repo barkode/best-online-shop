@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'http://sportsvit.eu-west-2.elasticbeanstalk.com';
+axios.defaults.baseURL = 'https://d10lvg3mbdbpo0.cloudfront.net/users';
 
 const config = {
   headers: {

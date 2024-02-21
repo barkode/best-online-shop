@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'http://sportsvit.eu-west-2.elasticbeanstalk.com';
+axios.defaults.baseURL = 'https://d10lvg3mbdbpo0.cloudfront.net/users';
 
 const config = {
   headers: {
@@ -14,7 +14,7 @@ export const getProducts = createAsyncThunk(
   'products/getAll',
   async (_, thunkAPI) => {
     try {
-      const res = await axios.get(`/products/2`, '', config.headers);
+      const res = await axios.get(``, '', config.headers);
       console.log(res.data);
       return res.data;
     } catch (error) {

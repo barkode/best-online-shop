@@ -28,8 +28,17 @@ import {
   heroBgThird,
   heroBgThird2x,
 } from 'images';
-
+import { useDispatch } from 'react-redux';
+import { getProducts } from '../../redux/products/operations';
 export const MainSection = () => {
+  const dispatch = useDispatch();
+  const handle = () => {
+    try {
+      dispatch(getProducts());
+    } catch (error) {
+      console.error(error);
+    }
+  };
   const backgroundImages = [
     `url(${heroBgFirst}),-webkit-image-set(url(${heroBgFirst}) 1x, url(${heroBgFirst2x}) 2x`,
     `url(${heroBgSec}),-webkit-image-set(url(${heroBgSec}) 1x, url(${heroBgSec2x}) 2x`,
@@ -70,7 +79,7 @@ export const MainSection = () => {
                 Енергія в стилі, сила в кожному шовку – вибери свій шлях до
                 перемоги!
               </Text>
-              <LinkTo to="/catalog">Перейти до покупок</LinkTo>
+              <LinkTo onClick={() => handle()}>Перейти до покупок</LinkTo>
             </Container>
           </Slide>
         ))}
