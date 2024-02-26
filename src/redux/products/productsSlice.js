@@ -4,6 +4,7 @@ import { getProducts } from './operations';
 const initialState = {
   products: null,
 };
+
 const productsSlice = createSlice({
   name: 'products',
   initialState,
