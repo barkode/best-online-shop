@@ -1,38 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Container } from './ItemComponent.styled';
 import { Icon } from 'components/Icon/Icon';
-
+import { getAllCartProducts } from 'redux/cart/operations';
 import img from 'images/Rectangle.jpg';
+import { ItemQuantity } from 'components/UserCartComponent/UserCartComponent';
 
-export const ItemComponent = props => {
+export const ItemComponent = ({ description, price, size, article }) => {
+  const [quantity, setQuantity] = useState(1);
+
+  const dispatch = useDispatch();
+
+  const a = useSelector(getAllCartProducts);
+  console.dir(a);
+
   return (
     <Container>
       <div>
-        <img src={img} alt={'HELLO'} width={'180px'} height={'164px'} />
+        <img src={img} alt={'HELLO'} width={'180px'} height={'162px'} />
       </div>
       <div>
         <ul>
           <li>
             <ul>
-              <li>Спортивний топ чорного кольору</li>
-              <li>940 ₴</li>
+              <li>{description}</li>
+              <li>{`${price} ₴`}</li>
             </ul>
           </li>
-          <li>Артикул 34950-5</li>
-          <li>Розмір М</li>
+          <li>{`Артикул ${article}`}</li>
+          <li>{`Розмір ${size}`}</li>
           <ul>
             <li>
-              <ul>
+              <ItemQuantity>
                 <li>
-                  <Icon
-                    id={'plus'}
-                    width={'24px'}
-                    height={'24px'}
-                    style={{ fill: 'black' }}
-                  />
-                  plus
+                  <div>
+                    <Icon
+                      id={'plus'}
+                      width={'24px'}
+                      height={'24px'}
+                      style={{ fill: 'black' }}
+                    />
+                  </div>
                 </li>
-                <li>quantity</li>
+                <li>
+                  <span>{quantity}</span>
+                </li>
                 <li>
                   <Icon
                     id={'minus'}
@@ -40,9 +52,8 @@ export const ItemComponent = props => {
                     height={'24px'}
                     style={{ fill: 'black' }}
                   />
-                  minus
                 </li>
-              </ul>
+              </ItemQuantity>
             </li>
             <li>
               <Icon
