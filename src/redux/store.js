@@ -11,7 +11,7 @@ import {
 
 import { productsReducer } from './products/productsSlice';
 import { persistedAuthReducer } from './auth/authPersistConfig';
-import { persistedCartReducer } from './cart/cartPersistConfig';
+import { persistedCartReducer } from './cart/cartSlice';
 // import { cartReducer } from './cart/cartSlice';
 
 export const store = configureStore({
