@@ -1,13 +1,12 @@
-import { useDispatch } from 'react-redux';
 import {
-  Section,
-  Title,
-  HiddenTitle,
-  List,
-  ForHer,
-  ForHim,
   Btn,
   Container,
+  ForHer,
+  ForHim,
+  HiddenTitle,
+  List,
+  Section,
+  Title,
   WinterForHer,
   WinterForHim,
 } from './GenderSection.styled';

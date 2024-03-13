@@ -1,37 +1,37 @@
-import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Fragment, useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { selectUser } from '../../redux/auth/selectors';
-import { login, registration } from '../../redux/auth/operations';
 import { loginSchema, registerSchema } from 'utils/yupSchema';
+import { login, registration } from '../../redux/auth/operations';
+import { selectUser } from '../../redux/auth/selectors';
 
-import InputField from './InputField/InputField';
+import { Icon } from 'components/Icon/Icon';
 import {
+  AuthButtons,
   AuthLinks,
   AuthNav,
-  CloseButton,
-  FormItemWrapper,
-  InputWrapper,
-  Label,
-  Menu,
-  Form,
-  Title,
-  HiddenCheckbox,
-  FilterItemSquare,
-  CheckboxWrapper,
   Button,
-  AuthButtons,
-  List,
+  CheckboxWrapper,
+  CloseButton,
   Down,
-  Up,
+  FilterItemSquare,
+  Form,
+  FormItemWrapper,
+  HiddenCheckbox,
+  InputWrapper,
   Item,
+  Label,
+  List,
+  Menu,
   Option,
   SelectButton,
+  Title,
+  Up,
 } from './Auth.styled';
-import { Icon } from 'components/Icon/Icon';
+import InputField from './InputField/InputField';
 
 export const Auth = props => {
   const { closeModal } = props;
@@ -48,16 +48,6 @@ export const Auth = props => {
     setIsCategoriesShown(!isCategoriesShown);
   };
 
-  useEffect(() => {
-    const storedUserData = localStorage.getItem('userData');
-    if (storedUserData) {
-      setUserData(JSON.parse(storedUserData));
-      remember(true);
-    }
-  }, []);
-  console.log(user);
-  console.log(userData);
-
   const {
     register,
     handleSubmit,
@@ -69,6 +59,17 @@ export const Auth = props => {
     resolver: isAuth ? yupResolver(loginSchema) : yupResolver(registerSchema),
   });
   const remember = watch('remember');
+
+  useEffect(() => {
+    const storedUserData = localStorage.getItem('userData');
+    if (storedUserData) {
+      setUserData(JSON.parse(storedUserData));
+      remember(true);
+    }
+  }, [remember]);
+
+  console.log(user);
+  console.log(userData);
 
   const toggle = () => {
     console.log(isAuth);
@@ -91,7 +92,7 @@ export const Auth = props => {
       const result = await dispatch(
         registration({
           address: formData.address,
-          firstname: formData.firstname,
+          firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
           password: formData.password,

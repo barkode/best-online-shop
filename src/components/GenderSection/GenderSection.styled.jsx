@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 // import forHerFirst from '../../images/for-her-first.png';
 // import forHerSec from '../../images/for-her-second.png';
 // import forHimFirst from '../../images/for-him-first.png';
@@ -7,7 +7,14 @@ import { Link } from 'react-router-dom';
 // import winterForHer from '../../images/winter-for-her.png';
 // import winterForHim from '../../images/winter-for-him.png';
 
-import {forHerFirst, forHerSec, forHimFirst, forHimSec, winterForHer, winterForHim} from 'images';
+import {
+  forHerFirst,
+  forHerSec,
+  forHimFirst,
+  forHimSec,
+  winterForHer,
+  winterForHim,
+} from 'images';
 
 export const Section = styled.section`
   width: 100%;
