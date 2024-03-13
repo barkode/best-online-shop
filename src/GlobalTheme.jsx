@@ -79,3 +79,8 @@ export default DefaultTheme;
 // h7 - Mulish 16px Regular
 // buttons - Mulish 16px Regular
 // secondary text - Mulish 16px Regular
+
+// Bold - 700
+// Semi Bold - 600
+// Medium - 500
+// Regular - 400

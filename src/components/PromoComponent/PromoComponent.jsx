@@ -1,16 +1,35 @@
 import React from 'react';
-import { Container } from './PromoComponent.styled';
+import { Container, Input } from './PromoComponent.styled';
 import { ButtonComponent } from 'components/ButtonComponent/ButtonComponent';
+import { Title } from './PromoComponent.styled';
 
-export const PromoComponent = props => {
+export const PromoComponent = () => {
   return (
     <Container>
-      <h2>У вас є промокод на знижку?</h2>
-      <input />
+      <Title>У вас є промокод на знижку?</Title>
+      <Input placeholder="Введіть промокод" />
       <ul>
-        <li>Вартість замовлення</li>
-        <li>Знижка</li>
-        <li>Разом до сплати</li>
+        <li>
+          <ul>
+            <li>Вартість замовлення</li>
+            <li>1800</li>
+            <li>₴</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>Знижка</li>
+            <li>0</li>
+            <li>₴</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>Разом до сплати</li>
+            <li>1800</li>
+            <li>₴</li>
+          </ul>
+        </li>
       </ul>
       <ButtonComponent
         $style={{ padding: '20px 33px', lineHeight: '1.26' }}
